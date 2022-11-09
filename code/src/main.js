@@ -5,7 +5,9 @@ const timeLeft = document.getElementById("seconds-left");
 
 const render = () => {
   const now = new Date();
+  console.log(now)
   timeLeft.innerText = getSecondsLeftOfYear(now);
+
   timeContainer.innerText = getTimeString(now);
 }
 

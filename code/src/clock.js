@@ -1,10 +1,18 @@
 export const getTimeString = (now) => {
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-    const seconds = now.getSeconds();
+    const hour = addZero(now.getHours(addZero));
+    const minute = addZero(now.getMinutes());
+    const seconds = addZero(now.getSeconds());
     return `${hour}:${minute}:${seconds}`
 }
 
+const addZero = (time) => {
+    if (time < 10) {
+        return `0${time}`
+    }
+    else {
+        return time
+    }
+}
 const getNextYearDate = (now) => {
     const endOfYearDate = new Date(0)
     endOfYearDate.setUTCFullYear(now.getUTCFullYear() + 1)
